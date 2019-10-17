@@ -26,6 +26,7 @@ def massiv(str):
                 # if it's the last char in the alphabetical chain, then we add this chain to the array
                 data.append(str[nomer1:i])
     # checking the last character in a string, whether it is char or not 
+    # (because in the cycle we didn't take it into account)
     if str[i].isalpha():
         data.append(str[nomer1:i+1])
     return(data)
