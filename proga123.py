@@ -9,6 +9,8 @@ def massiv(str):
         else:
             if (i>0) and (str[i-1].isalpha()):
                 data.append(str[nomer1:i])
+    if str[i].isalpha():
+        data.append(str[nomer1:i+1])
     return(data)
 s = input()+' '
 print(massiv(s))
