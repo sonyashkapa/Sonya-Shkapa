@@ -15,14 +15,14 @@ def massiv(str):
         # checking if the character is an alphabetical char
         if str[i].isalpha():
             # if the character is an alphabetical char, then we check it's index and the previous element 
-            if (i>0) and (str[i-1].isalpha()):
+            if (i > 0) and (str[i-1].isalpha()):
                 continue
             else:
                 #  we remember the index of the first char in the alphabetical chain 
                 nomer1 = i
         else:
             # if the character is not char, we check it's index and the previous character 
-            if (i>0) and (str[i-1].isalpha()):
+            if (i > 0) and (str[i-1].isalpha()):
                 # if it's the last char in the alphabetical chain, then we add this chain to the array
                 data.append(str[nomer1:i])
     # checking the last character in a string, whether it is char or not 
