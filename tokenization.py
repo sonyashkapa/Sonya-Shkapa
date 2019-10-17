@@ -33,6 +33,6 @@ def making_array(str):
     return(data)
 # enter the line
 s = input()
-print(massiv(s))
+print(making_array(s))
 
 
