@@ -9,11 +9,11 @@ def massiv(str):
     for i,c in enumerate(str):
         # checking if the character is an alphabetical char
         if str[i].isalpha():
-            # if the character is the alphabetical char, then we check it's index and the previous element 
+            # if the character is an alphabetical char, then we check it's index and the previous element 
             if (i>0) and (str[i-1].isalpha()):
                 continue
             else:
-                #  we remember the index of the first char in an alphabetical chain 
+                #  we remember the index of the first char in the alphabetical chain 
                 nomer1 = i
         else:
             # if the character is not char, we check it's index and the previous character 
