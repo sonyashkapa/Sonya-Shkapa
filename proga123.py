@@ -1,11 +1,9 @@
-"""It is docstring of the module."""
+"""It is docstring of the module, which provide tokenization functions"""
 
 def massiv(str):
-    
-    
-    """ Function gets a string on input,
+    """ This function gets a string on input,
     and it gives an array of
-    alphabetical chains as an output """
+    alphabetical chains as output """
     
     
     # set the array, in which each element will be the alphabetical chain 
@@ -14,7 +12,8 @@ def massiv(str):
     for i, c in enumerate(str):
         # checking if the character is an alphabetical char
         if str[i].isalpha():
-            # if the character is an alphabetical char, then we check it's index and the previous element 
+            # if the character is an alphabetical char
+            # then we check it's index and the previous element 
             if (i > 0) and (str[i-1].isalpha()):
                 continue
             else:
@@ -23,9 +22,10 @@ def massiv(str):
         else:
             # if the character is not char, we check it's index and the previous character 
             if (i > 0) and (str[i-1].isalpha()):
-                # if it's the last char in the alphabetical chain, then we add this chain to the array
+                # if it's the last char in the alphabetical chain
+                # then we add this chain to the array
                 data.append(str[nomer1:i])
-    # checking the last character in a string, whether it is char or not 
+    # checking the last character in our string, whether it is letter or not 
     # (because in the cycle we didn't take it into account)
     if str[i].isalpha():
         data.append(str[nomer1:i+1])
