@@ -5,22 +5,22 @@ def massiv(str):
     alphabetical chains as an output """
     # set the array
     data = []  
-    # cycle that goes through each element in a string
+    # cycle that goes through each character in a string
     for i,c in enumerate(str):
-        # checking if the element is a letter
+        # checking if the character is an alphabetical char
         if str[i].isalpha():
-            # if the element is a letter, then we check it's index and the previous element 
+            # if the character is the alphabetical char, then we check it's index and the previous element 
             if (i>0) and (str[i-1].isalpha()):
                 continue
             else:
-                #  we remember the index of the first letter in an alphabetical chain 
+                #  we remember the index of the first char in an alphabetical chain 
                 nomer1 = i
         else:
-            # if the element is not a letter, we check it's index and the previous element 
+            # if the character is not char, we check it's index and the previous character 
             if (i>0) and (str[i-1].isalpha()):
-                # if it's the last letter in the alphabetical chain, then we add this chain to the array
+                # if it's the last char in the alphabetical chain, then we add this chain to the array
                 data.append(str[nomer1:i])
-    # checking the last element in a string, whether it is a letter or not 
+    # checking the last character in a string, whether it is char or not 
     if str[i].isalpha():
         data.append(str[nomer1:i+1])
     return(data)
