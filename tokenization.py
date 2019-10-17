@@ -1,6 +1,6 @@
 """It is docstring of the module, which provide tokenization functions"""
 
-def massiv(str):
+def making_array(str):
     """ This function gets a string on input,
     and it gives an array of
     alphabetical chains as output """
