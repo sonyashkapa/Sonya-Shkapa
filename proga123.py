@@ -1,4 +1,3 @@
-"""It is docstring of the module."""
 def massiv(str):
     """ Function gets a string on input,
     and it gives an array of
