@@ -27,7 +27,7 @@ def making_array(str):
                 data.append(str[nomer1:i])
     # checking the last character in our string, whether it is letter or not 
     # if the last character was alphabetic
-    # then the program does not meet non-alphabetic one to save the last alphabetic chain
+    # then the cycle does not meet non-alphabetic one to save the last alphabetic chain
     if str[i].isalpha():
         data.append(str[nomer1:i+1])
     return(data)
