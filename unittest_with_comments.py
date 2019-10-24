@@ -19,5 +19,6 @@ class making_arrayTest(unittest.TestCase):
     def test_isanalpha(self):
         self.assertTrue('Мамамылараму'.isalpha())
         self.assertFalse('7574мама00мыла778раму'.isalpha())
+
 if __name__== '__main__':
     unittest.main()
