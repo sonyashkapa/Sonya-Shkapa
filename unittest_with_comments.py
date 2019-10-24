@@ -1,8 +1,6 @@
 import unittest
 # testing the program. for this we call the testcase class
 class making_arrayTest(unittest.TestCase):
-    def test(self):
-        pass
     # split breaks a string into parts using a delimiter
     # and returns these parts in a list.
     # so here we check if our program can split the string
