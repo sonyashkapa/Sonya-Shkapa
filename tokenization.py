@@ -4,7 +4,7 @@ def making_array(str):
     """ This function gets a string on input,
     and it gives an array of
     alphabetical chains as output """
-    
+    i = 0
     
     # set the array, in which each element will be the alphabetical chain 
     data = []  
