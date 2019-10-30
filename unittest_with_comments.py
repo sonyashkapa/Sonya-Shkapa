@@ -21,6 +21,11 @@ class making_arrayTest(unittest.TestCase):
     def test_isanalpha(self):
         self.assertTrue('Мамамылараму'.isalpha())
         self.assertFalse('7574мама00мыла778раму'.isalpha())
+    # program check if an empty string is entered  
+    def test_empty_string(self):
+      s = ''
+      self.assertEqual(tokenization.process_string(s), [])
 
 if __name__== '__main__':
     unittest.main()
+
