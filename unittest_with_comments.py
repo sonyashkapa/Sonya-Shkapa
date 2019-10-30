@@ -24,7 +24,7 @@ class making_arrayTest(unittest.TestCase):
     # program check if an empty string is entered  
     def test_empty_string(self):
       s = ''
-      self.assertEqual(tokenization.process_string(s), [])
+      self.assertEqual(tokenization.making_array(s), [])
 
 if __name__== '__main__':
     unittest.main()
