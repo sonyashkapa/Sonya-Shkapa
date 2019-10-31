@@ -10,16 +10,14 @@ class making_arrayTest(unittest.TestCase):
         self.assertEqual(self.Tokenizator.making_array(s), [])
 
     def test_isalnum(self):
-        s = 'мама23мыла34раму65'
-        self.assertEqual(self.Tokenizator.making_array(s), [])
-        s = 'мама!помой*раму3'
+        s = 'а233465'
         self.assertEqual(self.Tokenizator.making_array(s), [])
 
     def test_isanalpha(self):
         s = 'Мамамылараму'  
-        self.assertEqual(self.Tokenizator.making_array(s), [])
-        s = '7574мама00мыла778раму'
-        self.assertEqual(self.Tokenizator.making_array(s), [])
+        self.assertEqual(self.Tokenizator.making_array(s), ['Мамамылараму'])
+        s = '7574мама 00мыла 778раму'
+        self.assertEqual(self.Tokenizator.making_array(s), ['мама','мыла','раму'])
    
     def test_empty_string(self):
         s = ''
