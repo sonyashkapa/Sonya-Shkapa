@@ -33,7 +33,7 @@ class MakingArrayTest(unittest.TestCase):
         s = '7574мама 00мыла 778раму'
         self.assertEqual(self.Tokenizator.making_array(s), ['мама','мыла','раму'])
         
-    # program check if an empty string is entered
+    """ program check if an empty string is entered"""
     def test_empty_string(self):
         s = ''
         self.assertEqual(self.Tokenizator.making_array(s), [])
@@ -56,6 +56,8 @@ class TestUnittest(unittest.TestCase):
         self.assertTrue('Мамамылараму'.isalpha())
         self.assertFalse('7574мама00мыла778раму'.isalpha())
         
+     """ program check if an empty string is entered"""    
+
     def test_empty_string(self):
         s = ''
         self.assertEqual(tokenization.making_array(s), [])
