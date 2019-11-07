@@ -1,7 +1,7 @@
 import unittest
 from tokenizator import Tokenizator
 
-class making_arrayTest(unittest.TestCase):
+class MakingArrayTest(unittest.TestCase):
         
     def setUp(self):
         self.Tokenizator = Tokenizator()
