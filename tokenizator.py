@@ -1,5 +1,5 @@
 class Tokenizator(object):
-    def making_array(str):
+    def making_array(self,str):
         i = 0
         data = []
         if str == '':
@@ -24,4 +24,4 @@ class Tokenizator(object):
 if __name__== '__main__':
     making_array = Tokenizator()
     s = input()
-    print(tokenizator.making_array(s))
+    print(Tokenizator.making_array(s))
