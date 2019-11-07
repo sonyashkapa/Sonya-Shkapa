@@ -1,3 +1,6 @@
+import unittest
+import tokenizator
+from tokenizator import Tokenizator
 
 class MakingArrayTest(unittest.TestCase):
         
