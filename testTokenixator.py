@@ -7,11 +7,11 @@ class making_arrayTest(unittest.TestCase):
         self.Tokenizator = Tokenizator()
     def test_words_split(self):
         s = 'мама мыла раму'
-        self.assertEqual(self.Tokenizator.making_array(s), [])
+        self.assertEqual(self.Tokenizator.making_array(s), ['мама','мыла','раму'])
 
     def test_isalnum(self):
         s = 'а233465'
-        self.assertEqual(self.Tokenizator.making_array(s), [])
+        self.assertEqual(self.Tokenizator.making_array(s), ['а'])
 
     def test_isanalpha(self):
         s = 'Мамамылараму'  
@@ -25,4 +25,5 @@ class making_arrayTest(unittest.TestCase):
 
 if __name__== '__main__':
     unittest.main()
+
 
