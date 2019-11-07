@@ -1,9 +1,11 @@
-"""It is docstring of the module, which provide tokenization functions"""
+"""It is docstring of the module, which provide tokenization functions
+"""
 class Tokenizator(object):
     def making_array(str):
     """ This function gets a string on input,
     and it gives an array of
-    alphabetical chains as output """
+    alphabetical chains as output 
+    """
         i = 0
     
     # set the array, in which each element will be the alphabetical chain 
