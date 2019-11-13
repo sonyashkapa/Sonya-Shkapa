@@ -3,6 +3,7 @@ import tokenizator
 from tokenizator import Tokenizator
 
 class MakingArrayTest(unittest.TestCase):
+ 
     def setUp(self):
         self.Tokenizator = Tokenizator()
 
