@@ -1,11 +1,26 @@
-"""It is docstring of the module, which provide tokenization functions
-"""
+def making_array(str):
+    i = 0
+    data = []  
+    if str == '':
+        print('строка пустая')
+        return []
+    for i, c in enumerate(str):
+        if str[i].isalpha():
+            if (i > 0) and (str[i-1].isalpha()):
+                continue
+            else:
+                nomer1 = i
+        else:
+            if (i > 0) and (str[i-1].isalpha()):
+                data.append(str[nomer1:i])
+    
+    if str[i].isalpha():
+        data.append(str[nomer1:i+1])
+    return(data)
+
 class Tokenizator(object):
-    def making_array(str):
-    """ This function gets a string on input,
-    and it gives an array of
-    alphabetical chains as output 
-    """
+    def tokenize(self,str):
+   
         i = 0
     
     # set the array, in which each element will be the alphabetical chain 
@@ -36,9 +51,12 @@ class Tokenizator(object):
         if str[i].isalpha():
             data.append(str[nomer1:i+1])
         return(data)
-if __name__== '__main__':
-    making_array = Tokenizator()
+def main():
     s = input()
-    print(Tokenizator.making_array(s))
+    print(Tokenizator.tokenize(s))
+    result = making_array(s)
+    print(result)
+if __name__== '__main__':
+    main()
 
 
