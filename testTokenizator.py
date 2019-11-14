@@ -41,7 +41,7 @@ class TestUnittest(unittest.TestCase):
 
         def test_isanalpha(self):
             s = 'Мамамылараму'
-            self.assertEqual(tokenizator.making_array(s), ['мама','мыла','раму'])
+            self.assertEqual(tokenizator.making_array(s), ['мамамылараму'])
             s ='7574мама00мыла778раму'
             self.assertEqual(tokenizator.making_array(s), ['мама','мыла','раму'])
   
