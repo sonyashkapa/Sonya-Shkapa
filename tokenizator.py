@@ -39,7 +39,8 @@ class Tokenizator(object):
      """ This class uses the method to divide a string in a list of alphabetical substrings."""
         
     def tokenize(self,str):
-   
+        """ This method divides a string in the array of alphabetical substrings."""
+        
         i = 0
     
     # set the array, in which each element will be the alphabetical chain 
