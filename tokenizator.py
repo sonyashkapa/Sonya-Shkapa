@@ -69,6 +69,8 @@ class Tokenizator(object):
         if str[i].isalpha():
             data.append(str[nomer1:i+1])
         return(data)
+    
+    
 def main():
     s = input()
     print(Tokenizator.tokenize(s))
