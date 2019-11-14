@@ -12,7 +12,7 @@ def making_array(str):
     if str == '':
         print('строка пустая')
         return []
-    # cycle that goes through each character in a string
+    # loop that goes through each character in a string
     for i, c in enumerate(str):
         # checking if the character is an alphabetical char
         if str[i].isalpha():
@@ -46,7 +46,7 @@ class Tokenizator(object):
         if str == '':
             print('строка пустая')
             return []
-        # cycle that goes through each character in a string
+        # loop that goes through each character in a string
         for i, c in enumerate(str):
             # checking if the character is an alphabetical char
             if str[i].isalpha():
