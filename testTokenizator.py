@@ -5,7 +5,7 @@ from tokenizator import Tokenizator
 class MakingArrayTest(unittest.TestCase):
  
     def setUp(self):
-        self.tokentest= Tokenizator()
+        self.tokentest = Tokenizator()
 
     def test_words_split(self):
         s = 'мама мыла раму'
