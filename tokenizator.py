@@ -9,8 +9,7 @@ def making_array(str):
     i = 0
     # set the array, in which each element will be the alphabetical chain 
     data = []  
-    if str == '':
-        print('строка пустая')
+    if str == '': 
         return []
     # loop that goes through each character in a string
     for i, c in enumerate(str):
