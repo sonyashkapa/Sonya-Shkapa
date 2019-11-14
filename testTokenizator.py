@@ -11,21 +11,16 @@ class MakingArrayTest(unittest.TestCase):
         s = 'мама мыла раму'
         self.assertEqual(self.Tokenizator.tokenize(s), ['мама','мыла','раму'])
  
-    
     def test_isalnum(self):
         s = 'а233465'
         self.assertEqual(self.Tokenizator.tokenize(s), ['а'])
                 
-   
-      
     def test_isanalpha(self):
         s = 'Мамамылараму'  
         self.assertEqual(self.Tokenizator.tokenize(s), ['Мамамылараму'])
         s = '7574мама 00мыла 778раму'
         self.assertEqual(self.Tokenizator.tokenize(s), ['мама','мыла','раму'])
         
-    
-    
     def test_empty_string(self):
         s = ''
         self.assertEqual(self.Tokenizator.tokenize(s), [])
@@ -37,14 +32,12 @@ class TestUnittest(unittest.TestCase):
             self.assertEqual(tokenizator.making_array(s), ['мама','мыла','раму'])
             s = 'мама!помой*'
             self.assertEqual(tokenizator.making_array(s), ['мама','помой'])
- 
 
         def test_isanalpha(self):
             s = 'Мамамылараму'
             self.assertEqual(tokenizator.making_array(s), ['мамамылараму'])
             s ='7574мама00мыла778раму'
             self.assertEqual(tokenizator.making_array(s), ['мама','мыла','раму'])
-  
 
         def test_empty_string(self):
             s = ''
