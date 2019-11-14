@@ -1,4 +1,10 @@
+""" This module contains methods and a function for tokenizing a string of characters
+    
+"""
+
 def making_array(str):
+    """ Divides a string in a list of alphabetical substrings."""
+
     i = 0
     data = []  
     if str == '':
