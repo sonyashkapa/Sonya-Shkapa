@@ -51,8 +51,6 @@ class TestUnittest(unittest.TestCase):
             self.assertEqual(tokenizator.making_array(s), [])
        
 
-       
-# do not forget to insert this module into the code you are checking
 if __name__== '__main__':
     unittest.main()
 
