@@ -44,8 +44,7 @@ class Tokenizator(object):
         i = 0
         data = []
         if str == '':
-            print('строка пустая')
-            return []
+          return []
         # loop that goes through each character in a string
         for i, c in enumerate(str):
             # checking if the character is an alphabetical char
