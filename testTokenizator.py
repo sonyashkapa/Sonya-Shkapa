@@ -5,25 +5,25 @@ from tokenizator import Tokenizator
 class MakingArrayTest(unittest.TestCase):
  
     def setUp(self):
-        self.Tokenizator = Tokenizator()
+        self.tokentest= Tokenizator()
 
     def test_words_split(self):
         s = 'мама мыла раму'
-        self.assertEqual(self.Tokenizator.tokenize(s), ['мама','мыла','раму'])
+        self.assertEqual(self.tokentest.tokenize(s), ['мама','мыла','раму'])
  
     def test_isalnum(self):
         s = 'а233465'
-        self.assertEqual(self.Tokenizator.tokenize(s), ['а'])
+        self.assertEqual(self.tokentest.tokenize(s), ['а'])
                 
     def test_isanalpha(self):
         s = 'Мамамылараму'  
-        self.assertEqual(self.Tokenizator.tokenize(s), ['Мамамылараму'])
+        self.assertEqual(self.tokentest.tokenize(s), ['Мамамылараму'])
         s = '7574мама 00мыла 778раму'
-        self.assertEqual(self.Tokenizator.tokenize(s), ['мама','мыла','раму'])
+        self.assertEqual(self.tokentest.tokenize(s), ['мама','мыла','раму'])
         
     def test_empty_string(self):
         s = ''
-        self.assertEqual(self.Tokenizator.tokenize(s), [])
+        self.assertEqual(self.tokentest.tokenize(s), [])
 
 class TestUnittest(unittest.TestCase):
 
