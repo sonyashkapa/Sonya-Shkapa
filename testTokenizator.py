@@ -33,13 +33,13 @@ class TestUnittest(unittest.TestCase):
             s = 'мама!помой*'
             self.assertEqual(tokenizator.making_array(s), ['мама','помой'])
 
-        def test_isanalpha(self):
+      def test_isanalpha(self):
             s = 'Мамамылараму'
             self.assertEqual(tokenizator.making_array(s), ['мамамылараму'])
             s ='7574мама00мыла778раму'
             self.assertEqual(tokenizator.making_array(s), ['мама','мыла','раму'])
 
-        def test_empty_string(self):
+      def test_empty_string(self):
             s = ''
             self.assertEqual(tokenizator.making_array(s), [])
        
