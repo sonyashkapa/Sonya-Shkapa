@@ -3,6 +3,7 @@
     
 """
 
+import unicodedata
 def making_array(str):
     """ This function divides a string in a list of alphabetical substrings."""
 
@@ -36,9 +37,11 @@ def making_array(str):
     return(data)
 
 class Tokenizator(object):
+    
     """ This class uses the method to divide a string in a list of alphabetical substrings."""
 
     def tokenize(self,str):
+        
         """ This method divides a string in the array of alphabetical substrings."""
         i = 0
         data = []
@@ -67,13 +70,74 @@ class Tokenizator(object):
         if str[i].isalpha():
             data.append(str[nomer1:i+1])
         return(data)
+    def defcategory(self, char):  
+        
+         """ This method is used for determining categories """
+            
+        if char.isalpha():
+            category = 'alpha'
+        elif char.isdigit():
+            category = 'digit'
+        elif char.isspace():
+            category = 'space'
+        elif unicodedata.category(char)[0] == 'P':
+            category = 'punct'
+        else:
+            category = 'unknown'
+        return category
     
+    def tokenize_categories(self, str):
+        """
+        This method adds token, its category, 
+        index of first and last char of substring in initial string 
+        
+        """
+        data2 = []
+        if len(str) == 0:
+            return []
+        else:
+            for i, c in enumerate(str):
+                category = self.defcategory(c)
+                if i == 0:
+                    index = i
+                    prevcat = category
+                # check if we didn't reach the last char of the string
+                elif (i+1) < len(str):
+                    # we compare categories of current and next chars
+                    # if they differ, so we have reached the last char of the category 
+                    if category != prevcat:
+                        token = str[index:i]
+                        t = Token(token, prevcat, index, i)
+                        data2.append(t)
+                        index = i
+                        prevcat = category
+            # check the last char in the string
+            token = str[index:]
+            i = i + 1  
+            t = Token(token, category, index, i) 
+            data2.append(t)         
+        return data2
+    
+class Token(object):
+  """
+    Class representing information about the token
+    Token type,first and last indexes in original string
+    """
+    def __init__(self, t, categ, frstind, lstind):
+      
+        self.token = t
+        self.category = categ
+        self.firstindex = frstind
+        self.lastindex = lstind
+
+    def __repr__(self):
+        """ Method of building printable outcome """
+        return ' ' + self.token + ' is  ' + self.category + ' located from ' + str(self.firstindex) + ' index to ' + str(self.lastindex) + ' index.' + '\n'
     
 def main():
-    s = input()
-    print(Tokenizator.tokenize(s))
-    result = making_array(s)
-    print(result)
-    
-if __name__== '__main__':
-    main()
+    t = Tokenizator()
+    str = 'мама 2!'
+    print(t.tokenize_categories(str))
+
+if __name__ == '__main__':
+    main()  
