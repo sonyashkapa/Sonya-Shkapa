@@ -1,4 +1,3 @@
-
 """ This module contains methods and a function for tokenizing a string of characters
     
 """
@@ -70,21 +69,21 @@ class Tokenizator(object):
         if str[i].isalpha():
             data.append(str[nomer1:i+1])
         return(data)
-    def defcategory(self, char):  
-        
+    def defcategory(self, char):
+         
          """ This method is used for determining categories """
-            
-        if char.isalpha():
+         
+         if char.isalpha():
             category = 'alpha'
-        elif char.isdigit():
-            category = 'digit'
-        elif char.isspace():
+         elif char.isdigit():
+              category = 'digit'
+         elif char.isspace():
             category = 'space'
-        elif unicodedata.category(char)[0] == 'P':
+         elif unicodedata.category(char)[0] == 'P':
             category = 'punct'
-        else:
+         else:
             category = 'unknown'
-        return category
+         return category
     
     def tokenize_categories(self, str):
         """
@@ -102,15 +101,16 @@ class Tokenizator(object):
                     index = i
                     prevcat = category
                 # check if we didn't reach the last char of the string
-                elif (i+1) < len(str):
+                else:
+                     if (i+1) < len(str):
                     # we compare categories of current and next chars
                     # if they differ, so we have reached the last char of the category 
-                    if category != prevcat:
-                        token = str[index:i]
-                        t = Token(token, prevcat, index, i)
-                        data2.append(t)
-                        index = i
-                        prevcat = category
+                        if category != prevcat:
+                            token = str[index:i]
+                            t = Token(token, prevcat, index, i)
+                            data2.append(t)
+                            index = i
+                            prevcat = category
             # check the last char in the string
             token = str[index:]
             i = i + 1  
@@ -119,19 +119,20 @@ class Tokenizator(object):
         return data2
     
 class Token(object):
-  """
+    """
     Class representing information about the token
     Token type,first and last indexes in original string
-    """
+    """     
     def __init__(self, t, categ, frstind, lstind):
-      
-        self.token = t
-        self.category = categ
-        self.firstindex = frstind
-        self.lastindex = lstind
+         self.token = t
+         self.category = categ
+         self.firstindex = frstind
+         self.lastindex = lstind
 
     def __repr__(self):
+          
         """ Method of building printable outcome """
+        
         return ' ' + self.token + ' is  ' + self.category + ' located from ' + str(self.firstindex) + ' index to ' + str(self.lastindex) + ' index.' + '\n'
     
 def main():
