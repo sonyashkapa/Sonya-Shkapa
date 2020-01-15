@@ -69,6 +69,7 @@ class Tokenizator(object):
         if str[i].isalpha():
             data.append(str[nomer1:i+1])
         return(data)
+    
     def defcategory(self, char):
          
          """ This method is used for determining categories """
@@ -123,11 +124,11 @@ class Token(object):
     Class representing information about the token
     Token type,first and last indexes in original string
     """     
-    def __init__(self, t, categ, frstind, lstind):
-         self.token = t
-         self.category = categ
+    def __init__(self, t, categ, frstind, lstind):      
          self.firstindex = frstind
          self.lastindex = lstind
+         self.token = t
+         self.category = categ
 
     def __repr__(self):
           
