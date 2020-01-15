@@ -72,7 +72,7 @@ class Tokenizator(object):
     
     def defcategory(self, char):
          
-         """ This method is used for determining categories """
+         """ This method is used for determining 4 categories """
          
          if char.isalpha():
             category = 'alpha'
@@ -96,23 +96,24 @@ class Tokenizator(object):
         if len(str) == 0:
             return []
         else:
+            # loop that goes through each character in a string
             for i, c in enumerate(str):
                 category = self.defcategory(c)
                 if i == 0:
                     index = i
                     prevcat = category
-                # check if we didn't reach the last char of the string
+                # check if we didn't reach the last character of the string
                 else:
                      if (i+1) < len(str):
-                    # we compare categories of current and next chars
-                    # if they differ, so we have reached the last char of the category 
+                    # we compare categories of current and next characters
+                    # if they differ, so we have reached the last characters of the category 
                         if category != prevcat:
                             token = str[index:i]
                             t = Token(token, prevcat, index, i)
                             data2.append(t)
                             index = i
                             prevcat = category
-            # check the last char in the string
+            # check the last character in the string
             token = str[index:]
             i = i + 1  
             t = Token(token, category, index, i) 
