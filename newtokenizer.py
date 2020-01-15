@@ -77,7 +77,7 @@ class Tokenizator(object):
          if char.isalpha():
             category = 'alpha'
          elif char.isdigit():
-              category = 'digit'
+             category = 'digit'
          elif char.isspace():
             category = 'space'
          elif unicodedata.category(char)[0] == 'P':
@@ -105,14 +105,14 @@ class Tokenizator(object):
                 # check if we didn't reach the last character of the string
                 else:
                      if (i+1) < len(str):
-                    # we compare categories of current and next characters
-                    # if they differ, so we have reached the last characters of the category 
-                        if category != prevcat:
-                            token = str[index:i]
-                            t = Token(token, prevcat, index, i)
-                            data2.append(t)
-                            index = i
-                            prevcat = category
+                        # we compare categories of current and next characters
+                        # if they differ, so we have reached the last characters of the category 
+                         if category != prevcat:
+                             token = str[index:i]
+                             t = Token(token, prevcat, index, i)
+                             data2.append(t)
+                             index = i
+                             prevcat = category
             # check the last character in the string
             token = str[index:]
             i = i + 1  
