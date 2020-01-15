@@ -105,8 +105,8 @@ class Tokenizator(object):
                 # check if we didn't reach the last character of the string
                 else:
                      if (i+1) < len(str):
-                        # we compare categories of current and next characters
-                        # if they differ, so we have reached the last characters of the category 
+                         # we compare categories of current and next characters
+                         # if they differ, so we have reached the last characters of the category 
                          if category != prevcat:
                              token = str[index:i]
                              t = Token(token, prevcat, index, i)
