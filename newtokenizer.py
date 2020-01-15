@@ -85,7 +85,7 @@ class Tokenizator(object):
             category = 'unknown'
          return category
     
-    def tokenize_categories(self, str):
+    def tokenize_cat(self, str):
         """
         This method adds token, its category, 
         index of first and last char of substring in initial string 
@@ -138,7 +138,7 @@ class Token(object):
 def main():
     t = Tokenizator()
     str = 'мама 2!'
-    print(t.tokenize_categories(str))
+    print(t.tokenize_cat(str))
 
 if __name__ == '__main__':
     main()  
