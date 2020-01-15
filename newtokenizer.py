@@ -70,7 +70,7 @@ class Tokenizator(object):
             data.append(str[nomer1:i+1])
         return(data)
     
-    def defcategory(self, char):
+    def defcategory(char):
          
          """ This method is used for determining 4 categories """
          
@@ -85,7 +85,7 @@ class Tokenizator(object):
          else:
             category = 'unknown'
          return category
-    
+    defcategory = staticmethod(defcategory)
     def tokenize_cat(self, str):
         """
         This method adds token, its category, 
@@ -98,7 +98,7 @@ class Tokenizator(object):
         else:
             # loop that goes through each character in a string
             for i, c in enumerate(str):
-                category = self.defcategory(c)
+                category = Tokenizator.defcategory(c)
                 if i == 0:
                     index = i
                     prevcat = category
@@ -143,4 +143,4 @@ def main():
     print(t.tokenize_cat(str))
 
 if __name__ == '__main__':
-    main()  
+    main()
