@@ -10,23 +10,23 @@ class TestTokenizatorWithCategories(unittest.TestCase):
         self.t = Tokenizator()
 
     def test_alpha(self):
-        s =self.t.tokenize_categories('1мама мыла рому')
+        s =self.t.tokenize_cat('1мама мыла рому')
         self.assertEqual(s[1].token, 'мама')
         self.assertEqual(s[1].category, 'alpha')
        
     def test_space(self):
-        s = self.t.tokenize_categories('мамамыларому')
+        s = self.t.tokenize_cat('мамамыларому')
         self.assertEqual(s[0].token, 'мамамыларому')
         
     def test_digit(self):
-        s = self.t.tokenize_categories('012345')
+        s = self.t.tokenize_cat('012345')
         self.assertEqual(s[0].token,'012345')
         self.assertEqual(s[0].category,'digit')
         self.assertEqual(s[0].firstindex, 0)
         self.assertEqual(s[0].lastindex, 6)
         
     def test_nonapha(self):
-        s = self.t.tokenize_categories('мама123мыла')
+        s = self.t.tokenize_cat('мама123мыла')
         self.assertEqual(s[1].token,'123')
         self.assertEqual(s[1].category,'digit')
 
