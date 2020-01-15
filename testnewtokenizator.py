@@ -34,25 +34,25 @@ class TestTokenizatorOfCategories(unittest.TestCase):
 class MakingArrayTest(unittest.TestCase):
  
     def setUp(self):
-        self.T = Tokenizator()
+        self.t = Tokenizator()
 
     def test_words_split(self):
         s = 'мама мыла раму'
-        self.assertEqual(self.T.tokenize(s), ['мама','мыла','раму'])
+        self.assertEqual(self.t.tokenize(s), ['мама','мыла','раму'])
 
     def test_isalnum(self):
         s = 'а233465'
-        self.assertEqual(self.T.tokenize(s), ['а'])
+        self.assertEqual(self.t.tokenize(s), ['а'])
 
     def test_isanalpha(self):
         s = 'Мамамылараму'  
-        self.assertEqual(self.T.tokenize(s), ['Мамамылараму'])
+        self.assertEqual(self.t.tokenize(s), ['Мамамылараму'])
         s = '7574мама 00мыла 778раму'
-        self.assertEqual(self.T.tokenize(s), ['мама','мыла','раму'])
+        self.assertEqual(self.t.tokenize(s), ['мама','мыла','раму'])
 
     def test_empty_string(self):
         s = ''
-        self.assertEqual(self.T.tokenize(s), [])
+        self.assertEqual(self.t.tokenize(s), [])
 
 class TestUnittest(unittest.TestCase):
  
