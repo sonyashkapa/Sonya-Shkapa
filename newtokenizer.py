@@ -69,7 +69,7 @@ class Tokenizator(object):
         if str[i].isalpha():
             data.append(str[nomer1:i+1])
         return(data)
-    
+    @staticmethod 
     def defcategory(char):
          
          """ This method is used for determining 4 categories """
@@ -85,7 +85,7 @@ class Tokenizator(object):
          else:
             category = 'unknown'
          return category
-    defcategory = staticmethod(defcategory)
+    
     def tokenize_cat(self, str):
         """
         This method adds token, its category, 
