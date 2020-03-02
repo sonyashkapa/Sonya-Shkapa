@@ -95,6 +95,9 @@ class GeneratorTest(unittest.TestCase):
         gen = list(Tokenizator.gen_tokenize_cat('мама123мыла'))
         self.assertEqual(gen[1].token,'123')
         self.assertEqual(gen[1].category,'digit')
+    def test_empty_string(self):
+        gen = list(Tokenizator.gen_tokenize_cat(''))
+        self.assertEqual(gen,[]) 
         
 if __name__ == '__main__':
     unittest.main()
