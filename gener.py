@@ -119,7 +119,37 @@ class Tokenizator(object):
             t = Token(token, category, index, i) 
             data2.append(t)         
         return data2
-    
+    def gen_tokenize_cat(str):
+        """
+        This method yiels tokens and category
+        
+        """
+        if len(str) == 0:
+            yield
+            return
+        else:
+            # loop that goes through each character in a string
+            for i, c in enumerate(str):
+                category = Tokenizator.defcategory(c)
+                if i == 0:
+                    index = i
+                    prevcat = category
+                # check if we didn't reach the last character of the string
+                else:
+                     if (i+1) < len(str):
+                         # we compare categories of current and next characters
+                         # if they differ, so we have reached the last characters of the category 
+                         if category != prevcat:
+                             token = str[index:i]
+                             t = Token(token, prevcat, index, i)
+                             yield t
+                             index = i
+                             prevcat = category
+            # check the last character in the string
+            token = str[index:]
+            i = i + 1  
+            t = Token(token, category, index, i) 
+            yield t 
 class Token(object):
     """
     Class representing information about the token
