@@ -125,7 +125,6 @@ class Tokenizator(object):
         
         """
         if len(str) == 0:
-            yield
             return
         else:
             # loop that goes through each character in a string
