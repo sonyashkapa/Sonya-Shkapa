@@ -148,7 +148,15 @@ class Tokenizator(object):
             token = str[index:]
             i = i + 1  
             t = Token(token, category, index, i) 
-            yield t 
+            yield t
+            
+    def gen_gen(self,str):
+        
+        """ This method is used for determining 2 categories """
+        
+        for token in self.gen_tokenize_cat(str):
+            if token.category == 'alpha' or token.category == 'digit' :
+                yield token
 class Token(object):
     """
     Class representing information about the token
