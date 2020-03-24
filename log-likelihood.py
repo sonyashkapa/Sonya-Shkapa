@@ -9,4 +9,7 @@ print("E1 = ",e1,", E2 = ",e2)
 g = a/e1
 g2 = b/e2
 g_in_sqr = 2 * (a* math.log1p(g) + b*math.log1p(g2))
+f_terms = (a+1)/(b+1)                                                
 print("Log-likelyhood = ",g_in_sqr)
+print("f terms = ",f_terms)                                                
+                                                
