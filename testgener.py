@@ -76,27 +76,27 @@ class TestUnittest(unittest.TestCase):
 class GeneratorTest(unittest.TestCase):
         
     def test_alpha(self):
-        gen = list(Tokenizator.gen_tokenize_cat('1мама мыла рому'))
+        gen = list(Tokenizator.gen_gen('1мама мыла рому'))
         self.assertEqual(gen[1].token, 'мама')
         self.assertEqual(gen[1].category, 'alpha')
         
     def test_space(self):
-        gen = list(Tokenizator.gen_tokenize_cat('мамамыларому'))
+        gen = list(Tokenizator.gen_gen('мамамыларому'))
         self.assertEqual(gen[0].token, 'мамамыларому')
         
     def test_digit(self):
-        gen = list(Tokenizator.gen_tokenize_cat('012345'))
+        gen = list(Tokenizator.gen_gen('012345'))
         self.assertEqual(gen[0].token,'012345')
         self.assertEqual(gen[0].category,'digit')
         self.assertEqual(gen[0].firstindex, 0)
         self.assertEqual(gen[0].lastindex, 6)
         
     def test_nonapha(self):
-        gen = list(Tokenizator.gen_tokenize_cat('мама123мыла'))
+        gen = list(Tokenizator.gen_gen('мама123мыла'))
         self.assertEqual(gen[1].token,'123')
         self.assertEqual(gen[1].category,'digit')
     def test_empty_string(self):
-        gen = list(Tokenizator.gen_tokenize_cat(''))
+        gen = list(Tokenizator.gen_gen(''))
         self.assertEqual(gen,[]) 
         
 if __name__ == '__main__':
